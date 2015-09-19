@@ -1,0 +1,4 @@
+mock==1.0.1
+simplejson==3.3.0
+Twisted==13.0.0
+
