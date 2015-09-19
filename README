@@ -4,18 +4,17 @@ Slightly updated version of the code & tests from my pyconuk 2015 talk,
 Licence: Apache
 
 Talk in extreme brief:
-to solve...
-  timing ✔
-    x when is it safe to assert?
-    ✔ now we control the test surface, we can return a deferred when complete
+  timing
+    x when is processing complete? it safe to assert?
+    ✔ now we control the inner interface, we can return a deferred when complete
 
-  inconsistent interface ✔
+  inconsistent interface
     x more tests, make more work for caller
     ✔ always returns a consistent type (Deferred or subclass)
 
-  mutation of state (request object) ✔
+  mutation of state (request object)
     x hard to make assertions
-    ✔ easy to compare model object
+    ✔ easy to compare behaviourless model object
 
 (also includes resource01, resource02 to demonstrate pyflakes, pylint)
 
@@ -24,7 +23,6 @@ Run tests:
 
 
 Bonus Content slide:
- Bonus Content (time dependant)
 
   Behaviour-less Model objects <-> Generated Tests (cf. ‘hypothesis’)
     ○ GOTO David MacIver’s talk “Finding more bugs..” or
