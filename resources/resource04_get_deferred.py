@@ -1,4 +1,3 @@
-from mock import Mock
 import simplejson as json
 
 from twisted.internet import defer
@@ -33,7 +32,7 @@ class DataResource(resource.Resource, HasDatabase):
             request.finish()
             return
 
-        d = self._merge_data(content, user.username, request)
+        d = self._merge_data(content, user.username)
         d.addCallback(self._finish_request, request)
         return d
 
@@ -41,7 +40,7 @@ class DataResource(resource.Resource, HasDatabase):
         request.setResponseCode(http.OK)
         request.finish()
 
-    def _merge_data(self, content, username, request):
+    def _merge_data(self, content, username):
         keyformat = 'data:{username}'
         key = keyformat.format(username=username)
 

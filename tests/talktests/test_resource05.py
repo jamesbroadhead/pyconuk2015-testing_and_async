@@ -1,9 +1,7 @@
 from __future__ import print_function
 
-from twisted.internet import defer
-from twisted.python.failure import Failure
 from twisted.trial import unittest
-from twisted.web import http, resource, server
+from twisted.web import http, server
 
 import simplejson as json
 from mock import Mock, MagicMock
@@ -11,7 +9,6 @@ from mock import Mock, MagicMock
 from resources.resource05_controller import DataResource5
 from resources.resource_utils import dmockfunc as stub_success
 from resources.resource_utils import fmockfunc as stub_failure
-
 from resources.resource_utils import ContentException
 
 
@@ -63,7 +60,6 @@ class TestControlFlow(unittest.TestCase):
 
     def test_load_body_fails(self):
         exc = ContentException('hi')
-        expected = defer.fail(exc).result
         sentinel = object()
 
         self.resource._load_body = stub_failure(exc)

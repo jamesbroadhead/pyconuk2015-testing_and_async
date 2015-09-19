@@ -35,7 +35,6 @@ class DataResource5(resource.Resource, HasDatabase):
 
     @staticmethod
     def _load_body(request):
-        user = get_user(request)
         body_js = request.content.read()
         content = json.loads(body_js)
         if not check_content(content):

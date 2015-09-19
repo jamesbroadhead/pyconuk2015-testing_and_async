@@ -1,5 +1,5 @@
 from twisted.trial import unittest
-from twisted.web import http, resource, server
+from twisted.web import http, server
 
 import simplejson as json
 from mock import MagicMock

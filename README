@@ -18,7 +18,8 @@ Talk in extreme brief:
 
 (also includes resource01, resource02 to demonstrate pyflakes, pylint)
 
-Run tests:
+Run linting/tests:
+  `make lint`
   `make test`
 
 

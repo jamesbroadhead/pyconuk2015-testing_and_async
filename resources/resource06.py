@@ -5,7 +5,7 @@ from twisted.web import http, resource, server
 
 from .database import HasDatabase
 from .response import Response, ErrorResponse
-from .resource_utils import get_user, check_content, ContentException
+from .resource_utils import get_user, check_content
 
 class DataController(HasDatabase):
     keyformat = 'data:{username}'
@@ -24,7 +24,6 @@ class DataController(HasDatabase):
 
     @staticmethod
     def _load_body(request):
-        user = get_user(request)
         body_js = request.content.read()
         content = json.loads(body_js)
         if not check_content(content):
@@ -73,4 +72,4 @@ class DataResource(resource.Resource):
     def _render_response_error(self, f, request):
         f.trap(ErrorResponse)
         response = f.value
-        return _render_response(response, request)
+        return self._render_response(response, request)
