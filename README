@@ -17,6 +17,8 @@ to solve...
     x hard to make assertions
     ✔ easy to compare model object
 
+(also includes resource01, resource02 to demonstrate pyflakes, pylint)
+
 Run tests:
   `make test`
 
