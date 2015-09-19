@@ -1,0 +1,41 @@
+Slightly updated version of the code & tests from my pyconuk 2015 talk,
+"Testing & Async, a journey"
+
+Licence: Apache
+
+Talk in extreme brief:
+to solve...
+  timing ✔
+    x when is it safe to assert?
+    ✔ now we control the test surface, we can return a deferred when complete
+
+  inconsistent interface ✔
+    x more tests, make more work for caller
+    ✔ always returns a consistent type (Deferred or subclass)
+
+  mutation of state (request object) ✔
+    x hard to make assertions
+    ✔ easy to compare model object
+
+Run tests:
+  `make test`
+
+
+Bonus Content slide:
+ Bonus Content (time dependant)
+
+  Behaviour-less Model objects <-> Generated Tests (cf. ‘hypothesis’)
+    ○ GOTO David MacIver’s talk “Finding more bugs..” or
+    ○ Tom Viner “Failure-seeking missiles”
+
+  Composition over Inheritance
+    ○ real-services integration testing
+    ○ local-services integration testing
+    ○ stubbed-services integration testing
+    ○ easier mocking (compose in a mock instead of monkey-patching)
+
+  Mutation testing “I already have 100% coverage” -- mutpy
+
+  video: Gary Bernhardt on Boundaries (also, “the clean architecture”)
+
+  pylint -- use it! (eliminate whole category of bugs, hence fewer tests)
